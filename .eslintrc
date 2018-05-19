@@ -1,0 +1,28 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "no-trailing-spaces": "off",
+    "react/forbid-prop-types": 0,
+    "no-underscore-dangle": "off",
+    "prefer-template": "off",
+    "no-restricted-globals": "off",
+    "no-console": 0,
+    "no-param-reassign": 0,
+    "no-return-assign": 0,
+    "no-case-declarations": 0
+  }
+}
