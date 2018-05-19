@@ -48,6 +48,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <DynamicForm
           form={form}
+          style={styles.formContainer}
         />
       </View>
     );
@@ -58,6 +59,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
+  },
+  formContainer: {
+    marginTop: 10,
   },
 });
 
@@ -76,9 +80,11 @@ The component takes one compulsory prop - `form`. Other props are optional. The 
 
 ## Form Components
 
+All component fields are required, except stated otherwise.
+
 #### Header
 
-Represents a header component. All fields are required.
+Represents a header component.
 
 ```
 {
@@ -86,8 +92,45 @@ Represents a header component. All fields are required.
   type: 'header',
   subtype: 'h1', // can be h1, h2 or h3
   label: 'Dynamic Form'
+  style: {
+    fontSize: 32,
+    color: 'red',
+  }, // optional
 }
 ```
 
+#### Paragraph
+
+Represents a paragraph component.
+
+```
+{
+  key: 'addsdfdvdvdd',
+  type: 'paragraph',
+  subtype: 'p',
+  label: 'Instructions on how to fill dynamic form',
+  style: {
+    fontSize: 14,
+  }, // optional
+}
+```
+
+#### TextInput
+
+Represents a paragraph component.
+
+```
+{
+  key: 'manshgdsuudfg',
+  type: "text",
+  required: true, // optional
+  label: 'What is your last name?',
+  placeholder: 'Last Name', // optional
+  subtype: 'text', // can be text, tel, email and password
+  maxlength: 30,
+  value: 'Salako',
+  disabled: false, // optional
+}
+```
 
 
