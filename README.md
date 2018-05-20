@@ -149,3 +149,33 @@ Represents a multi-line input component.
 }
 ```
 
+#### Rating
+
+Represents a rating component.
+
+```
+{
+  key: 'liaksunshdfjnbah',
+  type: 'starRating',
+  label: 'Rate your programming skill',
+  maxStars: 7,
+  value: 1,
+  required: true,
+  config: {
+    iconSet: 'MaterialIcons',
+    emptyStar: 'star-border',
+    fullStar: 'star',
+    halfStar: 'star-half',
+    enableHalfStar: false,
+    ratingRemark: {
+      1: 'Beginer',
+      2: 'Enthusiast',
+      3: 'Junior',
+      4: 'Intermediate',
+      5: 'Senior',
+      6: 'Team Lead',
+      7: 'god like',
+    },
+  },
+}
+```
