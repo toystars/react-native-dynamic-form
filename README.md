@@ -309,5 +309,6 @@ Represents a number input component.
   max: 100,
   step: 2,
   disabled: false,
+  directTextEdit: false,
 }
 ```
