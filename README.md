@@ -277,3 +277,19 @@ Represents a toggle component.
   ]
 }
 ```
+
+#### Date
+
+Represents a date component.
+
+```
+{
+  key: 'aabnstfavahbdaas',
+  type: 'date',
+  label: 'Date of Birth',
+  value: '26-11-2018',
+  placeholder: '25-05-2018',
+  dateFormat: 'DD-MM-YYYY',
+  disabled: false,
+}
+```
