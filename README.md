@@ -142,9 +142,10 @@ Represents a multi-line input component.
   key: 'jahaughabdvad',
   type: 'textarea',
   label: 'Please describe yourself in not more than 400 characters',
-  placeholder: "My name is John Doe and I am...", // optional
+  placeholder: 'My name is John Doe and I am...', // optional
   maxlength: 400, // optional
   required: true, // optional
+  value: 'I am a software engineer with 98 years experience...',
 }
 ```
 
