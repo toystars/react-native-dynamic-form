@@ -117,7 +117,7 @@ Represents a paragraph component.
 
 #### TextInput
 
-Represents a paragraph component.
+Represents an input component.
 
 ```
 {
@@ -127,10 +127,24 @@ Represents a paragraph component.
   label: 'What is your last name?',
   placeholder: 'Last Name', // optional
   subtype: 'text', // can be text, tel, email and password
-  maxlength: 30,
+  maxlength: 30, // optional
   value: 'Salako',
   disabled: false, // optional
 }
 ```
 
+#### TextArea
+
+Represents a multi-line input component.
+
+```
+{
+  key: 'jahaughabdvad',
+  type: 'textarea',
+  label: 'Please describe yourself in not more than 400 characters',
+  placeholder: "My name is John Doe and I am...", // optional
+  maxlength: 400, // optional
+  required: true, // optional
+}
+```
 
