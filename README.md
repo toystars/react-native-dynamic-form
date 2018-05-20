@@ -293,3 +293,21 @@ Represents a date component.
   disabled: false,
 }
 ```
+
+#### Number Input
+
+Represents a number input component.
+
+```
+{
+  key: 'manbsgvagsdbdhh',
+  type: 'number',
+  label: 'Number of Data Structure and Algorithm books read',
+  placeholder: 0,
+  value: 0,
+  min: 0,
+  max: 100,
+  step: 2,
+  disabled: false,
+}
+```
