@@ -166,6 +166,7 @@ Represents a rating component.
     emptyStar: 'star-border',
     fullStar: 'star',
     halfStar: 'star-half',
+    starFillColor: '#f5a623',
     enableHalfStar: false,
     ratingRemark: {
       1: 'Beginer',
