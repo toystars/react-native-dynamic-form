@@ -1,3 +1,4 @@
+export const primary = '#00a5ff';
 export const textPrimary = '#2A3C53';
 export const error = '#FF6565';
 export const iconDark = 'rgba(0,0,0,0.4)';

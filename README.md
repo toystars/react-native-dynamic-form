@@ -204,3 +204,76 @@ Represents a radio button component.
   ]
 }
 ```
+
+#### CheckBox
+
+Represents a checkbox component.
+
+```
+{
+  key: 'avfsragsghgdbhfg',
+  type: 'checkbox-group',
+  label: 'Top 3 tech companies in the world',
+  other: true,
+  values: [
+    {
+      label: 'Google',
+      value: 'google',
+    },
+    {
+      label: 'Apple',
+      value: 'apple',
+    },
+    {
+      label: 'Facebook',
+      value: 'facebook',
+      selected: true,
+    },
+    {
+      label: 'Microsoft',
+      value: 'microsoft',
+    },
+    {
+      label: 'Amazon',
+      value: 'amazon',
+    },
+  ]
+}
+```
+
+#### Toggle
+
+Represents a toggle component.
+
+```
+{
+  key: 'anhsgabgbfnhhdnbf',
+  type: 'checkbox-group',
+  label: 'Sorting Algorithms familiar with',
+  toggle: true,
+  other: true,
+  values: [
+    {
+      label: 'Bubble Sort',
+      value: 'bubble sort',
+      selected: true,
+    },
+    {
+      label: 'Heapsort',
+      value: 'heapsort',
+    },
+    {
+      label: 'Insertion Sort',
+      value: 'insertion sort',
+    },
+    {
+      label: 'Merge Sort',
+      value: 'merge sort',
+    },
+    {
+      label: 'Quicksort',
+      value: 'quicksort',
+    },
+  ]
+}
+```
