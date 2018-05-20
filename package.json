@@ -18,6 +18,7 @@
   "dependencies": {
     "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
+    "react-native-material-ui": "^1.22.3",
     "react-native-star-rating": "^1.0.9"
   },
   "devDependencies": {

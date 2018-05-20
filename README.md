@@ -180,3 +180,27 @@ Represents a rating component.
   },
 }
 ```
+
+#### Radio Button
+
+Represents a radio button component.
+
+```
+{
+  key: 'sbasgdsbdgffgf',
+  type: 'radio-group',
+  label: 'Favorite Programming Language',
+  other: true, // displays an other input for custom data entry
+  values: [
+    {
+      label: 'JavaScript',
+      value: 'javascript',
+      selected: true, // preselected value
+    },
+    {
+      label: 'Ruby',
+      value: 'ruby',
+    }
+  ]
+}
+```
