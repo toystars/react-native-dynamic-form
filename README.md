@@ -102,7 +102,7 @@ Represents a header component.
 }
 ```
 
-#### Paragraph
+### Paragraph
 
 Represents a paragraph component.
 
@@ -120,7 +120,7 @@ Represents a paragraph component.
 }
 ```
 
-#### TextInput
+### TextInput
 
 Represents an input component.
 
@@ -144,19 +144,24 @@ Represents an input component.
 }
 ```
 
-#### TextArea
+### TextArea
 
 Represents a multi-line input component.
+
+<img src="https://user-images.githubusercontent.com/16062709/40323718-2d8d7ec4-5d2e-11e8-9d08-374d5d77ac27.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40323721-2edbcf06-5d2e-11e8-9bd6-c1922ef7c525.png" height="500" width="300">
 
 ```
 {
   key: 'jahaughabdvad',
   type: 'textarea',
   label: 'Please describe yourself in not more than 400 characters',
-  placeholder: 'My name is John Doe and I am...', // optional
+  placeholder: "My name is John Doe and I am...", // optional
   maxlength: 400, // optional
   required: true, // optional
-  value: 'I am a software engineer with 98 years experience...',
+  value: '', // optional
+  validationFunc: (value) => {
+    // do validation here and return bool status
+  }, // optional
 }
 ```
 
