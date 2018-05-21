@@ -165,7 +165,7 @@ Represents a multi-line input component.
 }
 ```
 
-#### Rating
+### Rating
 
 Represents a rating component.
 
@@ -178,7 +178,7 @@ Represents a rating component.
   label: 'Rate your programming skill',
   maxStars: 5,
   value: 3,
-  required: false,
+  required: false, // optional
   config: {
     iconSet: 'MaterialIcons', // react-native-vector-icon icon sets
     emptyStar: 'star-border', // empty star icon
@@ -196,21 +196,23 @@ Represents a rating component.
 }
 ```
 
-#### Radio Button
+### Radio Button
 
 Represents a radio button component.
+
+<img src="https://user-images.githubusercontent.com/16062709/40326813-8723d514-5d38-11e8-8f71-32a4d6cc56bd.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40326814-88605ea2-5d38-11e8-88db-8e62abb1b3df.png" height="500" width="300">
 
 ```
 {
   key: 'sbasgdsbdgffgf',
   type: 'radio-group',
   label: 'Favorite Programming Language',
-  other: true, // displays an other input for custom data entry
+  other: true, // displays an other input for custom data entry, optional
   values: [
     {
       label: 'JavaScript',
       value: 'javascript',
-      selected: true, // preselected value
+      selected: true, // selected value (can be used to preselect values too) optional
     },
     {
       label: 'Ruby',
@@ -220,16 +222,18 @@ Represents a radio button component.
 }
 ```
 
-#### CheckBox
+### CheckBox
 
 Represents a checkbox component.
+
+<img src="https://user-images.githubusercontent.com/16062709/40329232-cabc22ce-5d40-11e8-82d9-702516c80076.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329231-ca94f2ee-5d40-11e8-91a6-12a3840029ab.png" height="500" width="300">
 
 ```
 {
   key: 'avfsragsghgdbhfg',
   type: 'checkbox-group',
   label: 'Top 3 tech companies in the world',
-  other: true,
+  other: true, // optional
   values: [
     {
       label: 'Google',
@@ -256,22 +260,24 @@ Represents a checkbox component.
 }
 ```
 
-#### Toggle
+### Toggle
 
 Represents a toggle component.
+
+<img src="https://user-images.githubusercontent.com/16062709/40329117-74a97562-5d40-11e8-9d78-5c337b8f644b.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329121-75c2bf44-5d40-11e8-9ead-c78d00bda337.png" height="500" width="300">
 
 ```
 {
   key: 'anhsgabgbfnhhdnbf',
   type: 'checkbox-group',
   label: 'Sorting Algorithms familiar with',
-  toggle: true,
-  other: true,
+  toggle: true, // renders a toggle instead of checkbox, optional
+  other: true, // renders an other field for free text entry
   values: [
     {
       label: 'Bubble Sort',
       value: 'bubble sort',
-      selected: true,
+      selected: true, // selected value (can be used to preselect values too) optional
     },
     {
       label: 'Heapsort',
@@ -290,12 +296,16 @@ Represents a toggle component.
       value: 'quicksort',
     },
   ]
-}
+},
 ```
 
-#### Date
+### Date
 
 Represents a date component.
+
+<img src="https://user-images.githubusercontent.com/16062709/40329401-5cf5faa2-5d41-11e8-9565-6bf3eef9f559.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329400-5cd312c6-5d41-11e8-8f29-c7126fabef68.png" height="500" width="300">
+
+<img src="https://user-images.githubusercontent.com/16062709/40329467-8da0530a-5d41-11e8-9406-cd962aaee986.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329466-8d71c4ea-5d41-11e8-8d83-ceefe398ff61.png" height="500" width="300">
 
 ```
 {
@@ -303,32 +313,34 @@ Represents a date component.
   type: 'date',
   label: 'Date of Birth',
   value: '26-11-2018',
-  placeholder: '25-05-2018',
-  dateFormat: 'DD-MM-YYYY',
-  disabled: false,
+  placeholder: '25-05-2018', // optional
+  dateFormat: 'DD-MM-YYYY', // optional
+  disabled: false, // optional
 }
 ```
 
-#### Number Input
+### Number Input
 
 Represents a number input component.
+
+<img src="https://user-images.githubusercontent.com/16062709/40329649-23a37c42-5d42-11e8-96a1-e4a7f62047d6.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329651-253e01ee-5d42-11e8-91cd-72d2fa3e6a64.png" height="500" width="300">
 
 ```
 {
   key: 'manbsgvagsdbdhh',
   type: 'number',
   label: 'Number of Data Structure and Algorithm books read',
-  placeholder: 0,
+  placeholder: 0, // optional
   value: 0,
-  min: 0,
-  max: 100,
-  step: 2,
-  disabled: false,
-  directTextEdit: false,
+  min: 0, // minimum allowed value, optional
+  max: 100, // maximum allowed value, optional
+  step: 2, // value step, optional, defaults to 1
+  disabled: false, // optional
+  directTextEdit: false, // enable or disable free form data entry, optional, defaults to false
 }
 ```
 
-#### Select
+### Select
 
 Represents a select component.
 

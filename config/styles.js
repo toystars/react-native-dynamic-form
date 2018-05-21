@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import {
   primary,
+  primaryDark,
   textPrimary,
   error,
   iconDark,
@@ -18,6 +19,7 @@ const fontFamily = Platform.OS === 'android' ? 'Roboto' : 'system font';
 export const defaultColors = {
   primary,
   textPrimary,
+  primaryDark,
   error,
   iconDark,
   textInputBorderColor,
@@ -68,6 +70,11 @@ export const defaultTheme = {
       color: starFillColor,
       fontSize: 14,
     },
+  },
+  // toggle
+  toggle: {
+    knobColor: primaryDark,
+    tintColor: primary,
   },
 };
 
@@ -129,6 +136,12 @@ export const buildTheme = (userColors = {}, userFonts = {}, userTheme = {}) => {
         fontSize: 14,
       },
       ...(_.get(userTheme, 'rating')),
+    },
+    // toggle
+    toggle: {
+      knobColor: mergedColors.primaryDark,
+      tintColor: mergedColors.primary,
+      ...(_.get(userTheme, 'toggle')),
     },
   };
 };
