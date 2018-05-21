@@ -12,6 +12,7 @@ import {
   starFillColor,
   black,
   white,
+  success,
 } from './colors';
 
 const fontFamily = Platform.OS === 'android' ? 'Roboto' : 'system font';
@@ -27,6 +28,7 @@ export const defaultColors = {
   starFillColor,
   black,
   white,
+  success,
 };
 
 export const defaultFonts = {
@@ -75,6 +77,16 @@ export const defaultTheme = {
   toggle: {
     knobColor: primaryDark,
     tintColor: primary,
+  },
+  // select
+  select: {
+    tagRemoveIconColor: error,
+    tagBorderColor: textInputBorderColor,
+    tagTextColor: primary,
+    selectedItemTextColor: primary,
+    selectedItemIconColor: primary,
+    itemTextColor: textPrimary,
+    submitButtonColor: success,
   },
 };
 
@@ -142,6 +154,17 @@ export const buildTheme = (userColors = {}, userFonts = {}, userTheme = {}) => {
       knobColor: mergedColors.primaryDark,
       tintColor: mergedColors.primary,
       ...(_.get(userTheme, 'toggle')),
+    },
+    // select
+    select: {
+      tagRemoveIconColor: mergedColors.error,
+      tagBorderColor: mergedColors.primary,
+      tagTextColor: mergedColors.primaryDark,
+      selectedItemTextColor: mergedColors.primary,
+      selectedItemIconColor: mergedColors.primary,
+      itemTextColor: mergedColors.textPrimary,
+      submitButtonColor: mergedColors.success,
+      ...(_.get(userTheme, 'select')),
     },
   };
 };

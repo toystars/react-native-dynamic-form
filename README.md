@@ -16,7 +16,7 @@ $ yarn add react-native-dynamic-form
 ```
 
 ## Usage
-Note: Ensure to add and configure [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) and [react-native-dialogs](https://github.com/aakashns/react-native-dialogs) in your project before using this package.
+Note: Ensure to add and configure [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) in your project before using this package.
 
 You can clone and try out the [sample](https://github.com/toystars/dynamic_form_sample) app.
 
@@ -344,17 +344,26 @@ Represents a number input component.
 
 Represents a select component.
 
+<img src="https://user-images.githubusercontent.com/16062709/40329930-32f3c1a6-5d43-11e8-985f-eff525a8c6ff.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329932-33fbb7a2-5d43-11e8-9cdd-9e82ab7ecb10.png" height="500" width="300">
+
+<img src="https://user-images.githubusercontent.com/16062709/40329980-6712f146-5d43-11e8-8511-73396eb56fc4.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329983-68a0a4f4-5d43-11e8-9c1c-2c61e7a9887d.png" height="500" width="300">
+
+<img src="https://user-images.githubusercontent.com/16062709/40330816-134150d2-5d46-11e8-903d-30ba8ba902b2.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40330819-14f6224a-5d46-11e8-9fed-bfb1db28ea17.png" height="500" width="300">
+
+<img src="https://user-images.githubusercontent.com/16062709/40330963-a6e571c4-5d46-11e8-8eef-384873fa35e4.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40330964-a81610c6-5d46-11e8-8d3b-540d3f78b5f7.png" height="500" width="300">
+
 ```
 {
   key: 'nabsgsgdhyshdhf',
   type: 'select',
   label: 'Languages Spoken',
-  multiple: false,
+  multiple: false, // enable multiple selection and displays selected items as tags, optional
   searchInputPlaceholder: 'Search Languages...',
   values: [
     {
       label: 'Yoruba',
       value: 'yoruba',
+      selected: true, // selected value (can be used to preselect values too) optional
     },
     {
       label: 'Igbo',
