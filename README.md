@@ -74,7 +74,9 @@ The component takes one compulsory prop - `form`. Other props are optional. The 
 | Prop        | Required  | Type   | Purpose  |
 | ------------|-----------| -------| -------|
 | form        | Yes       | Array  | array of objects representing form components to render (see Form Components for more info) |
+| theme        | No       | Object | Theme to apply to entire dynamic form elements. See below for more info |
 | style        | No       | Object, Number  | Style to apply to form container. View Style |
+
 
 
 
@@ -82,19 +84,20 @@ The component takes one compulsory prop - `form`. Other props are optional. The 
 
 All component fields are required, except stated otherwise.
 
-#### Header
+### Header
 
 Represents a header component.
+
+<img src="https://user-images.githubusercontent.com/16062709/40319334-b71bc844-5d1f-11e8-804c-b0faefb88e21.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40320434-a6c79a32-5d23-11e8-8c94-a279d3556509.png" height="500" width="300">
 
 ```
 {
   key: 'hdghhdbdfgh',
   type: 'header',
-  subtype: 'h1', // can be h1, h2 or h3
-  label: 'Dynamic Form'
+  subtype: 'h2', // one of h1, h2 and h3
+  label: 'Dynamic Form',
   style: {
-    fontSize: 32,
-    color: 'red',
+    fontSize: 14,
   }, // optional
 }
 ```
@@ -103,14 +106,16 @@ Represents a header component.
 
 Represents a paragraph component.
 
+<img src="https://user-images.githubusercontent.com/16062709/40320298-18d54bf2-5d23-11e8-8074-cc158379afcb.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40320297-18a7c876-5d23-11e8-8d18-08620bc7d626.png" height="500" width="300">
+
+
 ```
 {
   key: 'addsdfdvdvdd',
   type: 'paragraph',
-  subtype: 'p',
   label: 'Instructions on how to fill dynamic form',
   style: {
-    fontSize: 14,
+    fontSize: 15,
   }, // optional
 }
 ```
@@ -119,6 +124,8 @@ Represents a paragraph component.
 
 Represents an input component.
 
+<img src="https://user-images.githubusercontent.com/16062709/40321119-f07579e0-5d25-11e8-9e63-53bbc443cd9a.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40321118-f04db27a-5d25-11e8-9872-3f46e6ecd825.png" height="500" width="300">
+
 ```
 {
   key: 'manshgdsuudfg',
@@ -126,10 +133,14 @@ Represents an input component.
   required: true, // optional
   label: 'What is your last name?',
   placeholder: 'Last Name', // optional
-  subtype: 'text', // can be text, tel, email and password
+  subtype: 'text', // one of text, tel, email and password
   maxlength: 30, // optional
-  value: 'Salako',
-  disabled: false, // optional
+  value: 'Salako', // optional
+  disabled: false, // optional,
+  icon: 'lock', // optional
+  validationFunc: (value) => {
+    // do validation here and return bool status
+  }, // optional
 }
 ```
 
