@@ -36,6 +36,17 @@ export const defaultFonts = {
 };
 
 export const defaultTheme = {
+  // labels
+  label: {
+    marginTop: 10,
+    fontSize: 14,
+    color: textPrimary,
+  },
+  // error
+  error: {
+    fontSize: 12,
+    color: error,
+  },
   // headers
   headers: {
     h1: {
@@ -105,7 +116,20 @@ export const buildTheme = (userColors = {}, userFonts = {}, userTheme = {}) => {
   return {
     colors: mergedColors,
     fonts: mergedFonts,
-    
+
+    // labels
+    label: {
+      marginTop: 10,
+      fontSize: 14,
+      color: mergedColors.textPrimary,
+      ...(_.get(userTheme, 'label')),
+    },
+    // error
+    error: {
+      fontSize: 12,
+      color: mergedColors.error,
+      ...(_.get(userTheme, 'error')),
+    },
     // component related theme
     // headers
     headers: {
