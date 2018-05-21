@@ -16,7 +16,7 @@ $ yarn add react-native-dynamic-form
 ```
 
 ## Usage
-Note: Ensure to add and configure [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) in your project before using this package.
+Note: Ensure to add and configure [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) and [react-native-dialogs](https://github.com/aakashns/react-native-dialogs) in your project before using this package.
 
 You can clone and try out the [sample](https://github.com/toystars/dynamic_form_sample) app.
 
@@ -310,5 +310,45 @@ Represents a number input component.
   step: 2,
   disabled: false,
   directTextEdit: false,
+}
+```
+
+#### Select
+
+Represents a select component.
+
+```
+{
+  key: 'nabsgsgdhyshdhf',
+  type: 'select',
+  label: 'Languages Spoken',
+  multiple: false,
+  searchInputPlaceholder: 'Search Languages...',
+  values: [
+    {
+      label: 'Yoruba',
+      value: 'yoruba',
+    },
+    {
+      label: 'Igbo',
+      value: 'igbo',
+    },
+    {
+      label: 'Hausa',
+      value: 'hausa',
+    },
+    {
+      label: 'English',
+      value: 'english',
+    },
+    {
+      label: 'Spanish',
+      value: 'spanish',
+    },
+    {
+      label: 'French',
+      value: 'french',
+    },
+  ]
 }
 ```

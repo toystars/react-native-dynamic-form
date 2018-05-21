@@ -3504,6 +3504,10 @@ react-native-material-ui@^1.22.3:
     prop-types "^15.5.10"
     react-native-material-design-styles "^0.2.6"
 
+react-native-multiple-select@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/react-native-multiple-select/-/react-native-multiple-select-0.4.4.tgz#6deb41afa3fb4a73e34ffd6851e64f4c36f4a6df"
+
 react-native-star-rating@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/react-native-star-rating/-/react-native-star-rating-1.0.9.tgz#b25ea19d4494cd1c7b14e931f99e92ddce3ef70d"
