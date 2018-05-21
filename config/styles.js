@@ -61,6 +61,14 @@ export const defaultTheme = {
     iconColor: iconDark,
     style: {},
   },
+  // rating
+  rating: {
+    starFillColor,
+    remarkStyle: {
+      color: starFillColor,
+      fontSize: 14,
+    },
+  },
 };
 
 export const buildTheme = (userColors = {}, userFonts = {}, userTheme = {}) => {
@@ -112,6 +120,15 @@ export const buildTheme = (userColors = {}, userFonts = {}, userTheme = {}) => {
       placeholderTextColor: mergedColors.placeholderTextColor,
       iconColor: mergedColors.iconDark,
       ...(_.get(userTheme, 'input')),
+    },
+    // rating
+    rating: {
+      starFillColor: mergedColors.starFillColor,
+      remarkStyle: {
+        color: mergedColors.starFillColor,
+        fontSize: 14,
+      },
+      ...(_.get(userTheme, 'rating')),
     },
   };
 };

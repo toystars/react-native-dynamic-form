@@ -169,29 +169,28 @@ Represents a multi-line input component.
 
 Represents a rating component.
 
+<img src="https://user-images.githubusercontent.com/16062709/40324093-617e9f46-5d2f-11e8-8b67-62663eb611fe.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40324095-627362b0-5d2f-11e8-9377-d15bd4e0143e.png" height="500" width="300">
+
 ```
 {
   key: 'liaksunshdfjnbah',
   type: 'starRating',
   label: 'Rate your programming skill',
-  maxStars: 7,
-  value: 1,
-  required: true,
+  maxStars: 5,
+  value: 3,
+  required: false,
   config: {
-    iconSet: 'MaterialIcons',
-    emptyStar: 'star-border',
-    fullStar: 'star',
-    halfStar: 'star-half',
-    starFillColor: '#f5a623',
-    enableHalfStar: false,
+    iconSet: 'MaterialIcons', // react-native-vector-icon icon sets
+    emptyStar: 'star-border', // empty star icon
+    fullStar: 'star', // full star icon
+    halfStar: 'star-half', // half star icon, if enableHalfStar is set to true
+    enableHalfStar: false, // enable half star
     ratingRemark: {
       1: 'Beginer',
       2: 'Enthusiast',
       3: 'Junior',
       4: 'Intermediate',
       5: 'Senior',
-      6: 'Team Lead',
-      7: 'god like',
     },
   },
 }
