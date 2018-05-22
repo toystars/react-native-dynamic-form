@@ -26,12 +26,10 @@ You can clone and try out the [sample](https://github.com/toystars/dynamic_form_
 
 Sample usage:
 
-```javascript
+``` javascript
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
 import DynamicForm from 'react-native-dynamic-form';
@@ -82,6 +80,140 @@ The component takes one compulsory prop - `form`. Other props are optional. The 
 | style        | No       | Object, Number  | Style to apply to form container. View Style |
 
 
+## Theming
+
+A global theme object can be passed to the `Dynamic Form` component which gets applied to most of the form elements. Theming is still a work in progress and far from perfect, but it provides a basic way of customizing form elements. Theming instructions are provided below:
+
+``` javascript
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import { buildTheme } from 'react-native-dynamic-form';
+
+const theme = buildTheme();
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <DynamicForm
+          form={form}
+          theme={theme} // theme prop is optional and default theme is applied if theme is not provided
+        />
+      </View>
+    );
+  }
+}
+```
+
+The code sample above builds a theme template and apply defaults configuration. This [file](config/styles.js) conatins the default values. The `defaultTheme` export in the styles config can be used as a template to build really customized theme object.
+
+### Full customization
+
+To fully customize form elements, the `buildTheme` export accepts three parameters in the order they appear below:
+
+- **userColors** - Object of colors to apply to form element. See [file](config/styles.js) for exact format.
+
+- **userFonts** - Object of fonts to apply to form element. See [file](config/styles.js) for exact format.
+
+- **userTheme** - Complete user theme object which is a clone of `defaultTheme` export in [styles config](config/styles.js) file. This can be copied over and modified.
+
+Below is an example of a fully customized theme builder
+
+``` javascript
+import { buildTheme } from 'react-native-dynamic-form';
+
+const myColors = {
+  primary: '#00a5ff',
+  textPrimary: '#2A3C53',
+  primaryDark: '#0077cb',
+  error: '#FF6565',
+  iconDark: 'rgba(0,0,0,0.4)',
+  textInputBorderColor: '#cac8c8',
+  placeholderTextColor: '#A9A9A9',
+  starFillColor: '#f5a623',
+  black: '#000000',
+  white: '#FFFFFF',
+  success: '#50e3c2',
+};
+
+const myFonts = {
+  defaultFontFamily: 'Roboto', // font should already be added to project
+};
+
+const myTheme = {
+  // labels
+  label: {
+    marginTop: 10,
+    fontSize: 14,
+    color: myColors.textPrimary,
+  },
+  // error
+  error: {
+    fontSize: 12,
+    color: myColors.error,
+  },
+  // headers
+  headers: {
+    h1: {
+      fontSize: 24,
+      color: myColors.textPrimary,
+      fontFamily: myFonts.defaultFontFamily,
+    },
+    h2: {
+      fontSize: 20,
+      color: myColors.textPrimary,
+      fontFamily: myFonts.defaultFontFamily,
+    },
+    h3: {
+      fontSize: 16,
+      color: myColors.textPrimary,
+      fontFamily: myFonts.defaultFontFamily,
+    },
+  },
+  // paragraph
+  p: {
+    fontSize: 16,
+    color: myColors.textPrimary,
+    fontFamily: myFonts.defaultFontFamily,
+  },
+  // input
+  input: {
+    placeholderTextColor,
+    iconColor: iconDark,
+    style: {},
+  },
+  // rating
+  rating: {
+    starFillColor,
+    remarkStyle: {
+      color: myColors.starFillColor,
+      fontSize: 14,
+    },
+  },
+  // toggle
+  toggle: {
+    knobColor: myColors.primaryDark,
+    tintColor: myColors.primary,
+  },
+  // select
+  select: {
+    tagRemoveIconColor: myColors.error,
+    tagBorderColor: myColors.textInputBorderColor,
+    tagTextColor: myColors.primary,
+    selectedItemTextColor: myColors.primary,
+    selectedItemIconColor: myColors.primary,
+    itemTextColor: myColors.textPrimary,
+    submitButtonColor: myColors.success,
+  },
+};
+
+const theme = buildTheme(myColors, myFonts, myTheme);
+
+// The most important paramater is the colors parameter which will be applied to all form elements.
+// Other sections of the theme object will be set to their default values and provided colors applied where necessary
+// Most times you will only have to do as below and leave the remaining configuration in their default state
+const theme = buildTheme(myColors);
+```
 
 
 ## Form Components
@@ -94,7 +226,7 @@ Represents a header component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40319334-b71bc844-5d1f-11e8-804c-b0faefb88e21.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40320434-a6c79a32-5d23-11e8-8c94-a279d3556509.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'hdghhdbdfgh',
   type: 'header',
@@ -113,7 +245,7 @@ Represents a paragraph component.
 <img src="https://user-images.githubusercontent.com/16062709/40320298-18d54bf2-5d23-11e8-8074-cc158379afcb.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40320297-18a7c876-5d23-11e8-8d18-08620bc7d626.png" height="500" width="300">
 
 
-```
+``` javascript
 {
   key: 'addsdfdvdvdd',
   type: 'paragraph',
@@ -130,7 +262,7 @@ Represents an input component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40321119-f07579e0-5d25-11e8-9e63-53bbc443cd9a.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40321118-f04db27a-5d25-11e8-9872-3f46e6ecd825.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'manshgdsuudfg',
   type: "text",
@@ -154,7 +286,7 @@ Represents a multi-line input component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40323718-2d8d7ec4-5d2e-11e8-9d08-374d5d77ac27.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40323721-2edbcf06-5d2e-11e8-9bd6-c1922ef7c525.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'jahaughabdvad',
   type: 'textarea',
@@ -175,7 +307,7 @@ Represents a rating component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40324093-617e9f46-5d2f-11e8-8b67-62663eb611fe.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40324095-627362b0-5d2f-11e8-9377-d15bd4e0143e.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'liaksunshdfjnbah',
   type: 'starRating',
@@ -206,7 +338,7 @@ Represents a radio button component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40326813-8723d514-5d38-11e8-8f71-32a4d6cc56bd.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40326814-88605ea2-5d38-11e8-88db-8e62abb1b3df.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'sbasgdsbdgffgf',
   type: 'radio-group',
@@ -232,7 +364,7 @@ Represents a checkbox component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40329232-cabc22ce-5d40-11e8-82d9-702516c80076.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329231-ca94f2ee-5d40-11e8-91a6-12a3840029ab.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'avfsragsghgdbhfg',
   type: 'checkbox-group',
@@ -270,7 +402,7 @@ Represents a toggle component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40329117-74a97562-5d40-11e8-9d78-5c337b8f644b.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329121-75c2bf44-5d40-11e8-9ead-c78d00bda337.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'anhsgabgbfnhhdnbf',
   type: 'checkbox-group',
@@ -311,7 +443,7 @@ Represents a date component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40329467-8da0530a-5d41-11e8-9406-cd962aaee986.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329466-8d71c4ea-5d41-11e8-8d83-ceefe398ff61.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'aabnstfavahbdaas',
   type: 'date',
@@ -329,7 +461,7 @@ Represents a number input component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40329649-23a37c42-5d42-11e8-96a1-e4a7f62047d6.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40329651-253e01ee-5d42-11e8-91cd-72d2fa3e6a64.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'manbsgvagsdbdhh',
   type: 'number',
@@ -356,7 +488,7 @@ Represents a select component.
 
 <img src="https://user-images.githubusercontent.com/16062709/40330963-a6e571c4-5d46-11e8-8eef-384873fa35e4.png" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40330964-a81610c6-5d46-11e8-8d3b-540d3f78b5f7.png" height="500" width="300">
 
-```
+``` javascript
 {
   key: 'nabsgsgdhyshdhf',
   type: 'select',
