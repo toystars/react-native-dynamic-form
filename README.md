@@ -4,7 +4,7 @@
 
 > Dynamic form builder for React Native
 
-### Sneak
+### Sneak Peak
 
 <img src="https://user-images.githubusercontent.com/16062709/40332387-dc97c3d0-5d4b-11e8-8ed7-7c8e19234de6.gif" height="500" width="300"> <img src="https://user-images.githubusercontent.com/16062709/40332552-47eb7776-5d4c-11e8-924d-34044580c671.gif" height="500" width="300">
 
