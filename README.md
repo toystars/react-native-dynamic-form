@@ -89,7 +89,7 @@ Object for displaying button at the end of form. Holds configuration on button a
 ``` javascript
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { buildTheme } from 'react-native-dynamic-form';
+import DynamicForm, { buildTheme } from 'react-native-dynamic-form';
 
 const theme = buildTheme();
 
@@ -122,6 +122,39 @@ export default class App extends Component {
 }
 ```
 
+### _getFormResponses
+
+Use component reference to get form responses at any point in time
+
+``` javascript
+import React, { Component } from 'react';
+import { View, Button } from 'react-native';
+import DynamicForm, { buildTheme } from 'react-native-dynamic-form';
+
+
+export default class App extends Component {
+
+  getFormResponses = () => {
+    const responses = this.formRef._getFormResponses();
+    // use responses here...
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <DynamicForm
+          ref={ref => this.formRef = ref}
+          form={form}
+        />
+        <Button
+          onPress={this.getFormResponses}
+          title="Get Form Responses"
+        />
+      </View>
+    );
+  }
+}
+```
 
 ## Theming
 
