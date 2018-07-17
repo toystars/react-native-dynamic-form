@@ -78,6 +78,49 @@ The component takes one compulsory prop - `form`. Other props are optional. The 
 | form        | Yes       | Array  | array of objects representing form components to render (see Form Components for more info) |
 | theme        | No       | Object | Theme to apply to entire dynamic form elements. See below for more info |
 | style        | No       | Object, Number  | Style to apply to form container. View Style |
+| onFormDataChange        | No       | Function  | Returns form responses as funtion argument whenever any change occur in form |
+| submitButton        | No       | Object  | Object for displaying button at the end of form. More info below |
+
+
+### submitButton (prop)
+
+Object for displaying button at the end of form. Holds configuration on button appeareance and beahaviour. See below for sample:
+
+``` javascript
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import { buildTheme } from 'react-native-dynamic-form';
+
+const theme = buildTheme();
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <DynamicForm
+          form={form}
+          theme={theme} // theme prop is optional and default theme is applied if theme is not provided
+          submitButton={{
+              action: (responses) => {
+                console.log('Submit Button Responses: ', responses);
+              }, // button action, takes form responses as argument, optional
+              label: 'Submit', // button label, required
+              buttonStyle: {
+                backgroundColor: '#CCCCCC',
+                borderRadius: 3,
+                height: 40,
+              }, // View PropTypes, optional
+              buttonTextStyle: {
+                fontSiz3: 18,
+              }, // Text PropTypes, optional
+              disabled: false, // boolean to disable button, optional
+            }}
+        />
+      </View>
+    );
+  }
+}
+```
 
 
 ## Theming
